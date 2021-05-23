@@ -1,70 +1,64 @@
-<!-- <div class="grid grid-cols-4 gap-4"> -->
-<div
-  class="
-    m-8
-    rounded
-    overflow-hidden
-    border
-    w-full
-    bg-white
-    mx-3
-    md:mx-0
-    lg:mx-0
-  "
->
-  <div class="w-full flex justify-between p-3">
-    <div class="flex">
-      <!-- <span class="pt-1 ml-2 font-bold text-lg">{{ article.title }}</span> -->
-    </div>
-    <span class="px-2 hover:bg-gray-300 cursor-pointer rounded"
-      ><i class="fas fa-ellipsis-h pt-2 text-lg"></i
-    ></span>
-  </div>
-  <!-- <img class="w-full bg-cover" [src]="media[0]['media-metadata'][0].url" /> -->
+<div class="wrapper bg-gray-400 antialiased text-gray-900">
+  <div class="mt-28 mb-28">
+    <img
+      [src]="data['media'][0]['media-metadata'][2]['url']"
+      alt=" random imgee"
+      class="w-full object-cover object-center rounded-lg shadow-md"
+    />
 
-  <img
-    class="w-full bg-cover"
-    src="https://static01.nyt.com/images/2021/05/17/business/14altGates-print/14Gates--top-thumbStandard.jpg"
-    alt=""
-  />
-  <div class="px-3 pb-2">
-    <div class="pt-2">
-      <i class="far fa-heart cursor-pointer"></i>
-      <span class="text-sm text-gray-400 font-medium">Title</span>
+    <div class="relative px-4 -mt-16">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="flex items-baseline">
+          <span
+            class="
+              bg-teal-200
+              text-teal-800 text-xs
+              inline-block
+              rounded-full
+              uppercase
+              font-semibold
+              tracking-wide
+              text-gray-400
+            "
+          >
+            Fecha de Publicación: {{ data["published_date"] | date }}
+          </span>
+        </div>
+
+        <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+          {{ data["title"] }}
+        </h4>
+
+        <div class="mt-1">
+          {{ data["byline"] }}
+        </div>
+        <div class="mt-4">
+          <p class="text-teal-600 text-md font-semibold text-justify">
+            {{ data["abstract"] }}
+          </p>
+        </div>
+        <div class="m-4">
+          <button
+            class="
+              bg-indigo-500
+              text-gray-100
+              p-2
+              w-full
+              rounded-full
+              tracking-wide
+              font-semibold font-display
+              focus:outline-none
+              focus:shadow-outline
+              hover:bg-indigo-600
+              shadow-lg
+              uppercase
+            "
+            (click)="goToNews()"
+          >
+            Ver noticias
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="pt-1">
-      <div class="mb-2 text-sm text-justify">Abstract</div>
-    </div>
-    <div class="text-sm mb-2 text-gray-400 cursor-pointer font-medium">
-      Fecha de Publicación:
-    </div>
-    <!-- <div class="mb-2">
-          <div class="mb-2 text-sm">
-            <span class="font-medium mr-2">razzle_dazzle</span> Dude! How cool! I
-            went to New Zealand last summer and had a blast taking the tour! So
-            much to see! Make sure you bring a good camera when you go!
-          </div>
-        </div> -->
-  </div>
-  <div class="m-4">
-    <button
-      class="
-        bg-indigo-500
-        text-gray-100
-        p-2
-        w-full
-        rounded-full
-        tracking-wide
-        font-semibold font-display
-        focus:outline-none
-        focus:shadow-outline
-        hover:bg-indigo-600
-        shadow-lg
-        uppercase
-      "
-    >
-      Ver Más
-    </button>
   </div>
 </div>
-<!-- </div> -->
