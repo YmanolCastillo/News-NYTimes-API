@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { News } from 'src/app/_models/news.interface';
 import { NewsService } from 'src/app/_services/news.service';
 
 @Component({
@@ -11,10 +9,7 @@ import { NewsService } from 'src/app/_services/news.service';
 })
 export class NewsDetailsComponent implements OnInit {
   id: any;
-  paramsSubscription: Subscription;
   data: any;
-  article: any;
-  dataInfo: News = new News();
   constructor(
     private _newsService: NewsService,
     private _route: ActivatedRoute,
@@ -22,15 +17,14 @@ export class NewsDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    //Adding ID to the Route Path
     this._route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
     });
 
+    //Getting New from the Route Path ID
     this._newsService.getNews('shared/7.json').subscribe((data) => {
       this.data = data['results'][this.id];
-      console.log(this.data['media'][0]['media-metadata'][0]['url']);
-
-      this.dataInfo.getObject(this.data);
     });
   }
 

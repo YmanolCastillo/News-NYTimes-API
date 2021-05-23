@@ -1,9 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/_services/news.service';
-import { map } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,26 +8,35 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   data: any;
-  media: any;
   id: number;
-  article: any;
-  constructor(
-    http: HttpClient,
-    private newsService: NewsService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  newsAuthor: string;
+  dayNews: boolean;
+  weekNews: boolean;
+  constructor(private _newsService: NewsService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.newsService.getNews('shared/7.json').subscribe((data) => {
+  ngOnInit() {
+    this.dayNews = true;
+    //Request for 1 Day News
+    this._newsService.getNews('shared/1.json').subscribe((data) => {
       this.data = data;
       console.log(data);
-
-      // console.log(data['results'][1].media[0]['media-metadata'][0].url);
+    });
+    //Request for 7 Days (Week) News
+    this._newsService.getNews('shared/7.json').subscribe((data) => {
+      this.data = data;
     });
   }
 
   onNewsDetails(id) {
     this.router.navigateByUrl(`/news-details/${id}`);
+  }
+
+  showDayNews() {
+    this.weekNews = false;
+    this.dayNews = true;
+  }
+  showWeekNews() {
+    this.dayNews = false;
+    this.weekNews = true;
   }
 }
