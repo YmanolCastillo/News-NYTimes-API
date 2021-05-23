@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   data: any;
   media: any;
   id: number;
-  // sub: any;
   article: any;
   constructor(
     http: HttpClient,
@@ -31,9 +30,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onNewsDetails(article) {
-    // this.newsService.currentArticle = article;
-    this.router.navigateByUrl('/news-details');
-    // this.router.navigate(['/product-details', this.id]);
+  onNewsDetails(id) {
+    this.router.navigateByUrl(`/news-details/${id}`);
   }
 }
