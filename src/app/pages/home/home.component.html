@@ -1,0 +1,79 @@
+<div class="grid grid-cols-4 gap-4">
+  <div
+    class="
+      m-8
+      rounded-md
+      overflow-hidden
+      border
+      w-full
+      bg-white
+      mx-3
+      md:mx-0
+      lg:mx-0
+    "
+    *ngFor="let article of data.results; index as id"
+    [routerLink]="['/news-details', article.id]"
+  >
+    <div class="w-full flex justify-between p-3">
+      <div class="flex">
+        <span class="pt-1 ml-2 font-bold text-lg">{{ article.title }}</span>
+      </div>
+      <span class="px-2 hover:bg-gray-300 cursor-pointer rounded"
+        ><i class="fas fa-ellipsis-h pt-2 text-lg"></i
+      ></span>
+    </div>
+    <!-- <img class="w-full bg-cover" [src]="media[0]['media-metadata'][0].url" /> -->
+
+    <img
+      class="w-full bg-cover"
+      src="https://static01.nyt.com/images/2021/05/17/business/14altGates-print/14Gates--top-thumbStandard.jpg"
+      alt=""
+    />
+    <div class="px-3 pb-2">
+      <div class="pt-2">
+        <i class="far fa-heart cursor-pointer"></i>
+        <span class="text-sm text-gray-400 font-medium"
+          >Sección: {{ article.section }}</span
+        >
+      </div>
+      <div class="pt-1">
+        <div class="mb-2 text-sm text-justify">
+          {{ article.abstract }}
+        </div>
+      </div>
+      <!-- <div class="text-sm mb-2 text-gray-400 cursor-pointer font-medium">
+        Fecha de Publicación: {{ article.published_date | date }}
+      </div> -->
+      <!-- <span class="text-sm mb-2 text-gray-400 cursor-pointer font-medium">
+        Autor: {{ article.source }}
+      </span> -->
+      <!-- <div class="mb-2">
+        <div class="mb-2 text-sm">
+          <span class="font-medium mr-2">razzle_dazzle</span> Dude! How cool! I
+          went to New Zealand last summer and had a blast taking the tour! So
+          much to see! Make sure you bring a good camera when you go!
+        </div>
+      </div> -->
+    </div>
+    <div class="m-4">
+      <button
+        class="
+          bg-indigo-500
+          text-gray-100
+          p-2
+          w-full
+          rounded-full
+          tracking-wide
+          font-semibold font-display
+          focus:outline-none
+          focus:shadow-outline
+          hover:bg-indigo-600
+          shadow-lg
+          uppercase
+        "
+      >
+        Ver Más
+      </button>
+    </div>
+  </div>
+</div>
