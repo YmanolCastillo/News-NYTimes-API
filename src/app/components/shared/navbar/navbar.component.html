@@ -1,0 +1,82 @@
+<section class="bg-indigo-dark h-50 p-8">
+  <div class="container mx-auto py-8">
+    <input
+      class="
+        w-full
+        h-14
+        rounded-md
+        mb-4
+        focus:outline-none
+        focus:shadow-outline
+        text-xl
+        px-8
+        shadow-lg
+      "
+      type="search"
+      placeholder="Escribe el nombre del autor..."
+    />
+    <nav class="flex">
+      <button
+        class="
+          bg-indigo-500
+          text-gray-100
+          p-2
+          m-4
+          rounded-full
+          font-semibold font-display
+          focus:outline-none
+          focus:shadow-outline
+          hover:cursor-pointer
+          shadow-md
+          uppercase
+          text-center
+        "
+        (click)="showDayNews()"
+      >
+        Noticias Recientes
+      </button>
+      <button
+        class="
+          bg-indigo-500
+          text-gray-100
+          p-2
+          m-4
+          rounded-full
+          font-semibold font-display
+          focus:outline-none
+          focus:shadow-outline
+          hover:cursor-pointer
+          shadow-md
+          uppercase
+          text-center
+        "
+        (click)="showWeekNews()"
+      >
+        Últimos 7 Días
+      </button>
+
+      <a
+        class="
+          no-underline
+          bg-indigo-500
+          text-gray-100
+          py-3
+          px-4
+          ml-auto
+          p-2
+          m-2
+          rounded-full
+          font-semibold font-display
+          focus:outline-none
+          focus:shadow-outline
+          hover:bg-indigo-600
+          shadow-md
+          uppercase
+          text-center
+        "
+        href="#"
+        >Botón lindo</a
+      >
+    </nav>
+  </div>
+</section>

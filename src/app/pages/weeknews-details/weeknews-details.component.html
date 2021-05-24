@@ -1,0 +1,64 @@
+<div class="wrapper bg-gray-400 antialiased text-gray-900">
+  <div class="mt-28 mb-28">
+    <img
+      [src]="data['media'][0]['media-metadata'][2]['url']"
+      alt=" random imgee"
+      class="w-full object-cover object-center rounded-lg shadow-md"
+    />
+
+    <div class="relative px-4 -mt-16">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="flex items-baseline">
+          <span
+            class="
+              bg-teal-200
+              text-teal-800 text-xs
+              inline-block
+              rounded-full
+              uppercase
+              font-semibold
+              tracking-wide
+              text-gray-400
+            "
+          >
+            Fecha de Publicación: {{ data["published_date"] | date }}
+          </span>
+        </div>
+
+        <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+          {{ data["title"] }}
+        </h4>
+
+        <div class="mt-1">
+          {{ data["byline"] }}
+        </div>
+        <div class="mt-4">
+          <p class="text-teal-600 text-md font-semibold text-justify">
+            {{ data["abstract"] }}
+          </p>
+        </div>
+        <div class="m-4">
+          <button
+            class="
+              bg-indigo-500
+              text-gray-100
+              p-2
+              w-full
+              rounded-full
+              tracking-wide
+              font-semibold font-display
+              focus:outline-none
+              focus:shadow-outline
+              hover:bg-indigo-600
+              shadow-lg
+              uppercase
+            "
+            (click)="goToNews()"
+          >
+            Ver noticias
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

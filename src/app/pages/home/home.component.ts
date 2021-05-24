@@ -9,34 +9,40 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   data: any;
   id: number;
-  newsAuthor: string;
-  dayNews: boolean;
-  weekNews: boolean;
+
+  // articles: any;
+
+  // newsAuthor: string;
+  // dayNews: boolean = true;
+  // weekNews: boolean;
   constructor(private _newsService: NewsService, private router: Router) {}
 
   ngOnInit() {
-    this.dayNews = true;
+    // this.dayNews = true;
     //Request for 1 Day News
-    this._newsService.getNews('shared/1.json').subscribe((data) => {
+    this._newsService.getNews('viewed/1.json').subscribe((data) => {
       this.data = data;
-      console.log(data);
     });
     //Request for 7 Days (Week) News
-    this._newsService.getNews('shared/7.json').subscribe((data) => {
-      this.data = data;
-    });
+    // this._newsService.getNews('viewed/7.json').subscribe((articles) => {
+    //   this.articles = articles;
+    //   console.log(articles);
+    // });
   }
 
-  onNewsDetails(id) {
+  onDayNewsDetails(id) {
     this.router.navigateByUrl(`/news-details/${id}`);
   }
+  // onWeekNewsDetails(id) {
+  //   this.router.navigateByUrl(`/weeknews-details/${id}`);
+  // }
 
-  showDayNews() {
-    this.weekNews = false;
-    this.dayNews = true;
-  }
-  showWeekNews() {
-    this.dayNews = false;
-    this.weekNews = true;
-  }
+  // showDayNews() {
+  //   this.weekNews = false;
+  //   this.dayNews = true;
+  // }
+  // showWeekNews() {
+  //   this.dayNews = false;
+  //   this.weekNews = true;
+  // }
 }

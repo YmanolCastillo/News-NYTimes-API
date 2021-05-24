@@ -3,16 +3,16 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { NewsService } from 'src/app/_services/news.service';
 
 @Component({
-  selector: 'app-news-details',
-  templateUrl: './news-details.component.html',
-  styleUrls: ['./news-details.component.scss'],
+  selector: 'app-weeknews-details',
+  templateUrl: './weeknews-details.component.html',
+  styleUrls: ['./weeknews-details.component.scss'],
 })
-export class NewsDetailsComponent implements OnInit {
+export class WeeknewsDetailsComponent implements OnInit {
   id: any;
   data: any;
   constructor(
-    private _newsService: NewsService,
     private _route: ActivatedRoute,
+    private _newsService: NewsService,
     private _router: Router
   ) {}
 
@@ -23,12 +23,12 @@ export class NewsDetailsComponent implements OnInit {
     });
 
     //Getting New from the Route Path ID
-    this._newsService.getNews('viewed/1.json').subscribe((data) => {
+    this._newsService.getNews('viewed/7.json').subscribe((data) => {
       this.data = data['results'][this.id];
     });
   }
 
   goToNews() {
-    this._router.navigateByUrl('/home');
+    this._router.navigateByUrl('/weeknews');
   }
 }

@@ -1,5 +1,5 @@
 <div class="antialiased bg-gray-200 h-full text-gray-900 font-sans p-6">
-  <section class="bg-indigo-dark h-50 p-8">
+  <!-- <section class="bg-indigo-dark h-50 p-8">
     <div class="container mx-auto py-8">
       <input
         class="
@@ -82,8 +82,9 @@
         >
       </nav>
     </div>
-  </section>
-  <div class="container mx-auto" *ngIf="dayNews == true">
+  </section> -->
+  <app-navbar></app-navbar>
+  <div class="container mx-auto">
     <h1 class="font-bold text-4xl mb-4">Noticias del Día</h1>
 
     <div class="flex flex-wrap -mx-4">
@@ -118,14 +119,8 @@
             <p class="asbtract text-sm text-justify">
               {{ article.abstract }}
             </p>
-            <!-- <div class="mt-3 flex items-center">
-              <span class="text-sm font-semibold">45,00</span>
-            </div> -->
           </div>
           <div class="p-4 border-t border-b text-xs text-gray-700">
-            <!-- <span class="flex items-center mb-1">
-              <i class="far fa-clock fa-fw mr-2 text-gray-900"></i> 3 Tage
-            </span> -->
             <span class="flex items-center">
               <button
                 class="
@@ -142,76 +137,7 @@
                   shadow-lg
                   uppercase
                 "
-                (click)="onNewsDetails(id)"
-              >
-                Ver Detalles
-              </button>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container mx-auto" *ngIf="weekNews == true">
-    <h1 class="font-bold text-4xl mb-4">Noticias de la Semana</h1>
-    <div class="flex flex-wrap -mx-4">
-      <div
-        class="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4"
-        *ngFor="let article of data.results; let id = index"
-      >
-        <div
-          href=""
-          class="
-            c-card
-            block
-            bg-white
-            shadow-md
-            hover:shadow-xl
-            rounded-lg
-            overflow-hidden
-          "
-        >
-          <div class="relative pb-48 overflow-hidden">
-            <img
-              class="absolute inset-0 h-full w-full object-cover"
-              [src]="article['media'][0]['media-metadata'][2]['url']"
-              alt=""
-            />
-          </div>
-          <div class="p-4">
-            <h2 class="title mt-2 mb-2 font-bold">{{ article.title }}</h2>
-            <h3 class="title mt-2 mb-2 text-sm text-gray-400">
-              {{ article.byline }}
-            </h3>
-            <p class="asbtract text-sm text-justify">
-              {{ article.abstract }}
-            </p>
-            <!-- <div class="mt-3 flex items-center">
-              <span class="text-sm font-semibold">45,00</span>
-            </div> -->
-          </div>
-          <div class="p-4 border-t border-b text-xs text-gray-700">
-            <!-- <span class="flex items-center mb-1">
-              <i class="far fa-clock fa-fw mr-2 text-gray-900"></i> 3 Tage
-            </span> -->
-            <span class="flex items-center">
-              <button
-                class="
-                  bg-indigo-500
-                  text-gray-100
-                  p-2
-                  w-full
-                  rounded-full
-                  tracking-wide
-                  font-semibold font-display
-                  focus:outline-none
-                  focus:shadow-outline
-                  hover:bg-indigo-600
-                  shadow-lg
-                  uppercase
-                "
-                (click)="onNewsDetails(id)"
+                (click)="onDayNewsDetails(id)"
               >
                 Ver Detalles
               </button>

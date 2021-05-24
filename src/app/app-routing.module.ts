@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewsDetailsComponent } from './pages/news-details/news-details.component';
+import { WeeknewsDetailsComponent } from './pages/weeknews-details/weeknews-details.component';
+import { WeeknewsComponent } from './pages/weeknews/weeknews.component';
 
 const routes: Routes = [
   {
@@ -20,8 +22,16 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'weeknews',
+    component: WeeknewsComponent,
+  },
+  {
     path: 'news-details/:id',
     component: NewsDetailsComponent,
+  },
+  {
+    path: 'weeknews-details/:id',
+    component: WeeknewsDetailsComponent,
   },
 ];
 
