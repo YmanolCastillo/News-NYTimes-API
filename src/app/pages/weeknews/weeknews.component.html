@@ -1,88 +1,5 @@
 <div class="antialiased bg-gray-200 h-full text-gray-900 font-sans p-6">
-  <!-- <section class="bg-indigo-dark h-50 p-8">
-    <div class="container mx-auto py-8">
-      <input
-        class="
-          w-full
-          h-14
-          rounded-md
-          mb-4
-          focus:outline-none
-          focus:shadow-outline
-          text-xl
-          px-8
-          shadow-lg
-        "
-        type="search"
-        placeholder="Escribe el nombre del autor..."
-      />
-      <nav class="flex">
-        <button
-          class="
-            bg-indigo-500
-            text-gray-100
-            p-2
-            m-4
-            rounded-full
-            font-semibold font-display
-            focus:outline-none
-            focus:shadow-outline
-            hover:cursor-pointer
-            shadow-md
-            uppercase
-            text-center
-          "
-          [ngClass]="{ 'bg-indigo-600': dayNews }"
-          (click)="showDayNews()"
-        >
-          Noticias Recientes
-        </button>
-        <button
-          class="
-            bg-indigo-500
-            text-gray-100
-            p-2
-            m-4
-            rounded-full
-            font-semibold font-display
-            focus:outline-none
-            focus:shadow-outline
-            hover:cursor-pointer
-            shadow-md
-            uppercase
-            text-center
-          "
-          [ngClass]="{ 'bg-indigo-600': weekNews }"
-          (click)="showWeekNews()"
-        >
-          Últimos 7 Días
-        </button>
-
-        <a
-          class="
-            no-underline
-            bg-indigo-500
-            text-gray-100
-            py-3
-            px-4
-            ml-auto
-            p-2
-            m-2
-            rounded-full
-            font-semibold font-display
-            focus:outline-none
-            focus:shadow-outline
-            hover:bg-indigo-600
-            shadow-md
-            uppercase
-            text-center
-          "
-          href="#"
-          >Botón lindo</a
-        >
-      </nav>
-    </div>
-  </section> -->
+  <!-- <app-navbar></app-navbar> -->
 
   <div class="container mx-auto">
     <input
@@ -102,8 +19,7 @@
       [(ngModel)]="filteredNews"
     />
     <app-navbar></app-navbar>
-    <h1 class="font-bold text-4xl mb-4">Noticias del Día</h1>
-
+    <h1 class="font-bold text-4xl mb-4">Noticias de la Semana</h1>
     <div class="flex flex-wrap -mx-4">
       <ng-container *ngFor="let article of data.results; let id = index">
         <div
@@ -115,8 +31,10 @@
           "
         >
           <div
+            href=""
             class="
               c-card
+              block
               bg-white
               shadow-md
               hover:shadow-xl
@@ -128,7 +46,7 @@
               <img
                 class="absolute inset-0 h-full w-full object-cover"
                 [src]="article['media'][0]['media-metadata'][2]['url']"
-                alt="Imagen de NY Times"
+                alt=""
               />
             </div>
             <div class="p-4">
@@ -157,7 +75,7 @@
                     shadow-lg
                     uppercase
                   "
-                  (click)="onDayNewsDetails(id)"
+                  (click)="onWeekNewsDetails(id)"
                 >
                   Ver Detalles
                 </button>
