@@ -17,12 +17,11 @@ export class NewsDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //Adding ID to the Route Path
     this._route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
     });
 
-    //Getting New from the Route Path ID
+    //Getting Article from the Route Path ID
     this._newsService.getNews('viewed/1.json').subscribe((data) => {
       this.data = data['results'][this.id];
     });

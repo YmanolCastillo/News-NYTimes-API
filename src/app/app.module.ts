@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,6 @@ import { NewsDetailsComponent } from './pages/news-details/news-details.componen
 import { WeeknewsDetailsComponent } from './pages/weeknews-details/weeknews-details.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { WeeknewsComponent } from './pages/weeknews/weeknews.component';
-// import { NewsFilterPipe } from './_pipes/news-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,8 @@ import { WeeknewsComponent } from './pages/weeknews/weeknews.component';
     WeeknewsDetailsComponent,
     NavbarComponent,
     WeeknewsComponent,
-    // NewsFilterPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -16,8 +16,7 @@ export class WeeknewsDetailsComponent implements OnInit {
     private _router: Router
   ) {}
 
-  ngOnInit() {
-    //Adding ID to the Route Path
+  ngOnInit(): void {
     this._route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
     });
