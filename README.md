@@ -17,7 +17,7 @@ In this project I used the NY Times API to show the news list and the articles d
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## :pushpin: Project Details
-...
+`
 ├── _services                   # To save the app services and use them later (Generated using: `ng g s _services/news`)
     ├── News-Service
 ├── Auth                        # Here we have the Login Page (Generated using: `ng g c auth/login`)
@@ -32,7 +32,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
         ├── Navbar
         
 └── README.md
-...
+`
 
 ## :pushpin: Further help
 
